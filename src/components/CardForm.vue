@@ -5,15 +5,10 @@
       v-bind:key="newCard.id"
       v-bind:card="newCard"
     />
-    <input class="number" type="text" placeholder="NUMBER" v-model="number" />
-    <input class="name" type="text" placeholder="NAME" v-model="name" />
-    <input
-      class="validThrough"
-      type="text"
-      placeholder="VALID THROUGH"
-      v-model="validThrough"
-    />
-    <input class="ccv" type="text" placeholder="CCV" v-model="ccv" />
+    <input class="number" type="text" v-model="number" />
+    <input class="name" type="text" v-model="name" />
+    <input class="validThrough" type="text" v-model="validThrough" />
+    <input class="ccv" type="text" v-model="ccv" />
     <button class="button" v-on:click="createCard">Skapa</button>
   </div>
 </template>
@@ -23,9 +18,7 @@ import Card from "./Card.vue";
 
 export default {
   name: "card-form",
-
   components: { Card },
-
   data() {
     return {
       number: "",
@@ -35,7 +28,6 @@ export default {
       cardInfo: [],
     };
   },
-
   methods: {
     createCard() {
       this.cardInfo.push({
