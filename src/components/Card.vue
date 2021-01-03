@@ -3,7 +3,8 @@
     Card holder name
     <div class="number">Number {{ card.number }}</div>
     <div class="name">Name {{ card.name }}</div>
-    <div class="validThrough">Valid {{ card.validThrough }}</div>
+    <div class="month">Month {{ card.month }}</div>
+    <div class="year">Year {{ card.year }}</div>
     <div class="ccv">CCV{{ card.ccv }}</div>
   </div>
 </template>
