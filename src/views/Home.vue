@@ -2,7 +2,7 @@
   <div class="home">
     <Card />
 
-    <CardForm />
+    <CardForm class="cardForm" />
   </div>
 </template>
 
@@ -18,3 +18,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
