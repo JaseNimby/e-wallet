@@ -1,29 +1,35 @@
 <template>
-  <div class="home">
-    <Card />
-
-    <CardForm class="cardForm" />
+  <div>
+    <Card v-on:kortet="nyttKort" />
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
-import CardForm from "@/components/CardForm.vue";
 
 export default {
   name: "Home",
-  components: {
-    Card,
-    CardForm,
+  coponents: { Card },
+
+  data() {
+    return {
+      card: {
+        number: "",
+        name: "",
+        month: "",
+        year: "",
+        ccv: "",
+        cardInfo: [],
+      },
+    };
+  },
+  methods: {
+    nyttKort(omg) {
+      this.cardInfo = omg.CardInfo;
+    },
   },
 };
 </script>
 
 <style scoped>
-.home {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
 </style>

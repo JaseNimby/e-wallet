@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Create a new card</router-link> |
-      <router-link to="/about">View my wallet</router-link>
+      <router-link to="/">View my wallet</router-link> |
+      <router-link to="/newCard">Create a new card</router-link>
     </div>
     <router-view />
   </div>
