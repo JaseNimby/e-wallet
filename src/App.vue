@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">View my wallet</router-link> |
-      <router-link to="/newCard">Create a new card</router-link>
-    </div>
+    <div id="nav">MY WALLET</div>
     <router-view />
   </div>
 </template>

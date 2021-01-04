@@ -44,6 +44,15 @@
       CCV
       <input class="ccv" type="text" v-model="ccv" v-on:input="sent" />
     </div>
+    <div class="vendor">
+      <select type="text" v-model="vendor" v-on:input="sent">
+        <option disabled vlaue="" />
+        <option>Bitcoin Inc</option>
+        <option>Evil Corp</option>
+        <option>Ninja Bank</option>
+        <option>Blockchain Inc</option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -57,7 +66,7 @@ export default {
       month: "",
       year: "",
       ccv: "",
-      cardInfo: [],
+      vendor: "",
     };
   },
   methods: {
@@ -68,6 +77,7 @@ export default {
         month: this.month,
         year: this.year,
         ccv: this.ccv,
+        vendor: this.vendor,
       });
     },
   },
@@ -75,15 +85,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  display: grid;
-  grid-template-columns: 5fr 5fr 5fr 5fr 5fr;
-  grid-template-rows: 5fr 5fr 5fr 5fr 5fr;
-  grid-gap: 20px;
-}
-
 .form {
-  display: grid;
+  display: flex;
+  flex: 1;
   grid-column: span 2 / 5;
   grid-row: 2;
   justify-items: left;

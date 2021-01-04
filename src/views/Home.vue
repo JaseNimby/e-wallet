@@ -1,15 +1,17 @@
 <template>
   <div>
-    <Card v-on:kortet="nyttKort" />
+    <Card v-bind:card="card" />
+    <CardStack />
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
+import CardStack from "@/components/CardStack.vue";
 
 export default {
   name: "Home",
-  coponents: { Card },
+  components: { Card, CardStack },
 
   data() {
     return {
@@ -19,14 +21,8 @@ export default {
         month: "",
         year: "",
         ccv: "",
-        cardInfo: [],
       },
     };
-  },
-  methods: {
-    nyttKort(omg) {
-      this.cardInfo = omg.CardInfo;
-    },
   },
 };
 </script>

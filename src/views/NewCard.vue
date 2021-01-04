@@ -1,10 +1,16 @@
 <template>
   <div class="home">
-    <Card v-bind:card="card" />
-
-    <CardForm v-on:sent="recieved" />
-
-    <router-link to="/"> <NewButton v-on:click="createCard" /></router-link>
+    <div class="container">
+      <div class="card">
+        <Card v-bind:card="card" />
+      </div>
+      <div class="form">
+        <CardForm v-on:sent="recieved" />
+      </div>
+      <div class="button">
+        <NewButton v-on:click="createCard" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,7 +29,6 @@ export default {
         month: "",
         year: "",
         ccv: "",
-        cardInfo: [],
       },
     };
   },
@@ -43,34 +48,43 @@ export default {
     },
 
     createCard() {
-      this.cardInfo.push({
+      this.$root.cardInfo.push({
         id: Date.now(),
-        number: this.number,
-        name: this.name,
-        month: this.month,
-        year: this.year,
-        ccv: this.ccv,
+        number: this.card.number,
+        name: this.card.name,
+        month: this.card.month,
+        year: this.card.year,
+        ccv: this.card.ccv,
         completed: true,
       });
-      this.number = "";
-      this.name = "";
-      this.month = "";
-      this.year = "";
-      this.ccv = "";
+      this.$router.push("/");
     },
-
-    // kortet() {
-    //   this.$emit("kortet", createCard());
-    // },
   },
 };
 </script>
 
 <style scoped>
-.home {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.container {
+  position: relative;
+}
+
+.card {
+  display: grid;
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+
+.form {
+  display: grid;
+  position: relative;
+  top: 20%;
+  justify-items: left;
+}
+
+.button {
+  display: grid;
+  grid-row-start: 5;
+  position: relative;
+  top: 80%;
 }
 </style>
