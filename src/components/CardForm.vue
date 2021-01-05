@@ -21,7 +21,7 @@
     </div>
     <div>MONTH / YEAR</div>
     <div>
-      <select class="month" type="text" v-model="month" v-on:input="sent">
+      <select class="month" type="text" v-model="month" v-on:change="sent">
         <option disabled vlaue="" />
         <option>01</option>
         <option>02</option>
@@ -30,7 +30,7 @@
         <option>05</option>
         <option>06</option>
       </select>
-      <select class="year" type="text" v-model="year" v-on:input="sent">
+      <select class="year" type="text" v-model="year" v-on:change="sent">
         <option disabled vlaue="" />
         <option>2021</option>
         <option>2022</option>
@@ -40,17 +40,15 @@
         <option>2026</option>
       </select>
     </div>
-    <div>
-      CCV
-      <input class="ccv" type="text" v-model="ccv" v-on:input="sent" />
-    </div>
+
     <div class="vendor">
-      <select type="text" v-model="vendor" v-on:input="sent">
+      <div>VENDOR</div>
+      <select type="text" v-model="vendor" v-on:change="sent">
         <option disabled vlaue="" />
-        <option>Bitcoin Inc</option>
-        <option>Evil Corp</option>
-        <option>Ninja Bank</option>
-        <option>Blockchain Inc</option>
+        <option value="bitcoin">Bitcoin Inc</option>
+        <option value="evil">Evil Corp</option>
+        <option value="ninja">Ninja Bank</option>
+        <option value="blockchain">Blockchain Inc</option>
       </select>
     </div>
   </div>
@@ -65,7 +63,6 @@ export default {
       name: "",
       month: "",
       year: "",
-      ccv: "",
       vendor: "",
     };
   },
@@ -76,7 +73,6 @@ export default {
         name: this.name,
         month: this.month,
         year: this.year,
-        ccv: this.ccv,
         vendor: this.vendor,
       });
     },
@@ -86,15 +82,20 @@ export default {
 
 <style scoped>
 .form {
-  display: flex;
-  flex: 1;
-  grid-column: span 2 / 5;
-  grid-row: 2;
-  justify-items: left;
+  display: inline-block;
   font-size: small;
+  padding: 0.5em;
+}
+.form > div {
+  padding: 0.25em;
 }
 
 input {
+  font-size: medium;
+  padding: 0.5rem;
+  width: 100%;
+}
+select {
   font-size: medium;
   padding: 0.5rem;
 }

@@ -23,4 +23,10 @@ button.disabled {
   background-color: darkgrey;
   color: grey;
 }
+
+button {
+  font-size: medium;
+  padding: 0.5rem;
+  width: 100%;
+}
 </style>

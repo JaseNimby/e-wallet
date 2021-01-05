@@ -1,15 +1,21 @@
 <template>
-  <div class="card">
+  <div class="card" v-bind:class="card.vendor">
     <img src="../assets/chip-light.svg" />
-    <div class="number">XXXX{{ card.number }}</div>
+
+    <div class="number">{{ card.number }}</div>
 
     <div class="name">
       CARDHOLDER NAME
       <div>{{ card.name }}</div>
     </div>
-    <div class="month">MM{{ card.month }}</div>
-    <div class="year">YY{{ card.year }}</div>
-    <div class="ccv">CCV{{ card.ccv }}</div>
+
+    <div class="valid">
+      <div>VALID UNTIL</div>
+      <div class="month">{{ card.month }}</div>
+      <div class="year">{{ card.year }}</div>
+    </div>
+
+    <div class="vendor">Vendor {{ card.vendor }}</div>
   </div>
 </template>
 
@@ -18,6 +24,11 @@ export default {
   name: "card",
   props: {
     card: Object,
+  },
+  data() {
+    return {
+      cardcolor: "green",
+    };
   },
 };
 </script>
@@ -31,25 +42,24 @@ export default {
   -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.51);
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.51);
   position: relative;
-  justify-content: left;
 }
 .card > img {
   position: relative;
   top: 10%;
-  left: 5%;
+  right: 36%;
 }
 
 .number {
   position: relative;
-  top: 50%;
-  left: 0%;
+  top: 20%;
+  right: 30%;
   font-size: 36px;
 }
 .name {
   font-size: small;
   position: relative;
-  left: 5%;
-  top: 40%;
+  right: 30%;
+  top: 20%;
   padding-bottom: 2px;
 }
 
@@ -58,5 +68,28 @@ export default {
 }
 
 .month {
+  position: relative;
+}
+
+.valid {
+  position: relative;
+  left: 30%;
+  top: 20%;
+}
+
+.ninja {
+  background-color: rgb(46, 46, 46);
+}
+
+.blockchain {
+  background-color: rgb(134, 34, 228);
+}
+
+.bitcoin {
+  background-color: rgb(255, 202, 28);
+}
+
+.evil {
+  background-color: rgb(255, 0, 55);
 }
 </style>

@@ -1,15 +1,13 @@
 <template>
-  <div class="home">
-    <div class="container">
-      <div class="card">
-        <Card v-bind:card="card" />
-      </div>
-      <div class="form">
-        <CardForm v-on:sent="recieved" />
-      </div>
-      <div class="button">
-        <NewButton v-on:click="createCard" />
-      </div>
+  <div class="container">
+    <div>
+      <Card v-bind:card="card" class="card" />
+    </div>
+    <div>
+      <CardForm v-on:sent="recieved" class="form" />
+    </div>
+    <div>
+      <NewButton v-on:click="createCard" class="button" />
     </div>
   </div>
 </template>
@@ -28,7 +26,7 @@ export default {
         name: "",
         month: "",
         year: "",
-        ccv: "",
+        vendor: "",
       },
     };
   },
@@ -44,7 +42,7 @@ export default {
       this.card.name = grillkorv.name;
       this.card.month = grillkorv.month;
       this.card.year = grillkorv.year;
-      this.card.ccv = grillkorv.ccv;
+      this.card.vendor = grillkorv.vendor;
     },
 
     createCard() {
@@ -54,7 +52,7 @@ export default {
         name: this.card.name,
         month: this.card.month,
         year: this.card.year,
-        ccv: this.card.ccv,
+        vendor: this.card.vedor,
         completed: true,
       });
       this.$router.push("/");
@@ -65,26 +63,24 @@ export default {
 
 <style scoped>
 .container {
-  position: relative;
-}
-
-.card {
-  display: grid;
-  grid-row-start: 1;
-  grid-column-start: 2;
+  /* display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20%;
+  grid-auto-rows: minmax(50px auto);
+  grid-gap: 1em; */
+  height: 500px;
+  width: 300px;
+  display: inline-block;
 }
 
 .form {
-  display: grid;
-  position: relative;
-  top: 20%;
-  justify-items: left;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  display: inline-block;
 }
 
 .button {
-  display: grid;
-  grid-row-start: 5;
-  position: relative;
-  top: 80%;
+  margin-bottom: 2rem;
 }
 </style>

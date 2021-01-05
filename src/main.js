@@ -13,14 +13,12 @@ new Vue({
         name: "Nejdå",
         month: "87",
         year: "",
-        ccv: "",
         vendor: "",
       }, {
         number: "Jaha",
         name: "",
         month: "",
         year: "",
-        ccv: "",
         vendor: "",
       }],
 

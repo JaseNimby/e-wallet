@@ -20,7 +20,7 @@ export default {
         name: "",
         month: "",
         year: "",
-        ccv: "",
+        vendor: "",
       },
     };
   },

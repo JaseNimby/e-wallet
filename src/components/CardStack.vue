@@ -1,11 +1,11 @@
 <template>
   <div>
     <Card
-      v-for="newCard in cards"
-      v-bind:key="newCard.id"
-      v-bind:card="newCard"
+      v-for="card in cards"
+      v-bind:key="card.id"
+      v-bind:card="card"
+      v-on:click="selectedCard(card)"
     />
-    <Card v-bind:card="cards[1]" />
 
     {{ cards }}
   </div>
@@ -19,6 +19,11 @@ export default {
   computed: {
     cards() {
       return this.$root.cardInfo;
+    },
+    methods: {
+      slecetdCard(card) {
+        this.$emit("selectedCard", card);
+      },
     },
   },
 };
