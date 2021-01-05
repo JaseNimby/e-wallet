@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Card v-bind:card="card" />
-    <CardStack />
+    <Card v-bind:card="shoosenCard" v-if="choosenCard" />
+    <CardStack v-on:showCard="showCard" />
   </div>
 </template>
 
@@ -22,7 +22,20 @@ export default {
         year: "",
         vendor: "",
       },
+      choosenCard: null,
     };
+  },
+
+  methods: {
+    showCard(shown) {
+      this.choosenCard = {
+        number: shown.number,
+        name: shown.namem,
+        month: shown.month,
+        year: shown.year,
+        vendor: shown.vendor,
+      };
+    },
   },
 };
 </script>

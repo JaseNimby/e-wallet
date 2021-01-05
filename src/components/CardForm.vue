@@ -44,7 +44,7 @@
     <div class="vendor">
       <div>VENDOR</div>
       <select type="text" v-model="vendor" v-on:change="sent">
-        <option disabled vlaue="" />
+        <option disabled vlaue="empty" />
         <option value="bitcoin">Bitcoin Inc</option>
         <option value="evil">Evil Corp</option>
         <option value="ninja">Ninja Bank</option>

@@ -52,7 +52,7 @@ export default {
         name: this.card.name,
         month: this.card.month,
         year: this.card.year,
-        vendor: this.card.vedor,
+        vendor: this.card.vendor,
         completed: true,
       });
       this.$router.push("/");

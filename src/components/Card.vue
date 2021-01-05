@@ -1,6 +1,9 @@
 <template>
-  <div class="card" v-bind:class="card.vendor">
-    <img src="../assets/chip-light.svg" />
+  <div class="card" v-on:click="$emit(`click`)" v-bind:class="card.vendor">
+    <header>
+      <img src="../assets/chip-light.svg" />
+      <img v-bind:src="require(`../assets/vendor-${card.vendor}.svg`)" />
+    </header>
 
     <div class="number">{{ card.number }}</div>
 
@@ -26,22 +29,26 @@ export default {
     card: Object,
   },
   data() {
-    return {
-      cardcolor: "green",
-    };
+    return {};
   },
+  methods: {},
 };
 </script>
 
-<style scoped>
+<style>
 .card {
-  background-color: lightgrey;
-  width: 340px;
-  height: 240px;
-  padding: 2px;
-  -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.51);
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.51);
-  position: relative;
+  max-width: 24rem;
+  height: 14rem;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 2.8rem;
+  text-shadow: rgba(255, 255, 255, 0.4) -1px -1px 2px;
+  border-radius: 0.6rem;
+  background: rgb(238, 238, 238);
+  padding: 1rem;
+  gap: 0.5rem 0px;
 }
 .card > img {
   position: relative;
@@ -51,7 +58,7 @@ export default {
 
 .number {
   position: relative;
-  top: 20%;
+  top: 10%;
   right: 30%;
   font-size: 36px;
 }
@@ -59,7 +66,7 @@ export default {
   font-size: small;
   position: relative;
   right: 30%;
-  top: 20%;
+  top: 15%;
   padding-bottom: 2px;
 }
 

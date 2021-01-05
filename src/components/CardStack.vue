@@ -1,13 +1,17 @@
 <template>
   <div>
-    <Card
-      v-for="card in cards"
-      v-bind:key="card.id"
-      v-bind:card="card"
-      v-on:click="selectedCard(card)"
-    />
-
-    {{ cards }}
+    <div class="wrapper">
+      <div class="centered">
+        <div class="stack">
+          <Card
+            v-for="card in cards"
+            v-bind:key="card.id"
+            v-bind:card="card"
+            @click="$emit(`showCard`, card)"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,14 +24,20 @@ export default {
     cards() {
       return this.$root.cardInfo;
     },
-    methods: {
-      slecetdCard(card) {
-        this.$emit("selectedCard", card);
-      },
-    },
   },
 };
 </script>
 
 <style scoped>
+.wrapper {
+  display: inline-block;
+}
+
+.centered {
+  align-items: center;
+}
+
+.stack {
+  cursor: pointer;
+}
 </style>
