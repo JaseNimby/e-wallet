@@ -7,18 +7,17 @@
 
     <div class="number">{{ card.number }}</div>
 
-    <div class="name">
-      CARDHOLDER NAME
-      <div>{{ card.name }}</div>
-    </div>
+    <section class="name">
+      <aside class="input">
+        CARDHOLDER NAME
+        <span>{{ card.name }}</span>
+      </aside>
+    </section>
 
-    <div class="valid">
-      <div>VALID UNTIL</div>
-      <div class="month">{{ card.month }}</div>
-      <div class="year">{{ card.year }}</div>
-    </div>
-
-    <div class="vendor">Vendor {{ card.vendor }}</div>
+    <aside class="valid">
+      <span>VALID UNTIL</span>
+      <p class="month">{{ card.month }} / {{ card.year }}</p>
+    </aside>
   </div>
 </template>
 
@@ -49,6 +48,7 @@ export default {
   background: rgb(238, 238, 238);
   padding: 1rem;
   gap: 0.5rem 0px;
+  color: beige;
 }
 .card > img {
   position: relative;
@@ -56,32 +56,28 @@ export default {
   right: 36%;
 }
 
-.number {
-  position: relative;
-  top: 10%;
-  right: 30%;
-  font-size: 36px;
+.card > header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-column: auto/span 2;
+  grid-row: auto/span 2;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
-.name {
-  font-size: small;
-  position: relative;
-  right: 30%;
-  top: 15%;
-  padding-bottom: 2px;
-}
-
-.name > div {
-  font-size: 24px;
-}
-
-.month {
-  position: relative;
-}
-
-.valid {
-  position: relative;
-  left: 30%;
-  top: 20%;
+.card > .number {
+  grid-column: auto/span 2;
+  grid-row: auto/span 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.6rem;
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 0 0;
 }
 
 .ninja {

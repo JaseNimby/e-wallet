@@ -80,11 +80,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .form {
-  display: inline-block;
-  font-size: small;
-  padding: 0.5em;
+  margin: 1rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
 }
 .form > div {
   padding: 0.25em;

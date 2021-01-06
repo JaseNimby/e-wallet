@@ -1,9 +1,15 @@
 <template>
-  <button v-on:click="click">ADD NEW CARD</button>
+  <button v-on:click="click">NEW CARD</button>
 </template>
 
 <script>
 export default {
+  props: {
+    disabled: {
+      type: Boolean,
+    },
+  },
+
   methods: {
     click() {
       this.$emit("click");
@@ -13,6 +19,11 @@ export default {
 </script>
 
 <style scoped>
+button.disabled {
+  background-color: darkgrey;
+  color: grey;
+}
+
 button {
   font-size: medium;
   padding: 0.5rem;

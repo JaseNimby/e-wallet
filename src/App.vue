@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">MY WALLET</div>
     <router-view />
   </div>
 </template>
@@ -11,11 +10,13 @@ export default {};
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: "PT Mono", monospace;
+  height: 100vh;
+  max-width: 24rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 0px auto;
 }
 
 #nav {

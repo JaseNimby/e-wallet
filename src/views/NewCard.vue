@@ -61,18 +61,7 @@ export default {
 };
 </script>
 
-<style scoped>
-.container {
-  /* display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20%;
-  grid-auto-rows: minmax(50px auto);
-  grid-gap: 1em; */
-  height: 500px;
-  width: 300px;
-  display: inline-block;
-}
-
+<style>
 .form {
   display: flex;
   align-items: center;
